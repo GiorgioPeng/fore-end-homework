@@ -1,2 +1,2 @@
 # fore-end-homework
-This knowledge base is used to assign front-end jobs.
+`This repositoriy is used to assign front-end jobs.`
