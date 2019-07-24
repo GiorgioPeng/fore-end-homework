@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>2019-5-8</title>
+</head>
+<style media="screen">
+  .present div{
+    width:100%;
+    height:200px;
+    border:solid 2px;
+    text-align:center;
+    line-height:200px;
+  }
+  .flex{
+    display:flex;
+    width:1200px;
+    height:200px;
+  }
+  .flex li{
+    list-style: none;
+    width:200px;
+    height:100px;
+    background:green;
+    text-align:center;
+    line-height:100px;
+  }
+</style>
+<body>
+  <div style="font-size:35px;width:100%;text-align:center;">常见鼠标事件讲解与演示</div>
+  <pre style="font-size:30px">什么是事件?
+      事件是在元素上面发生的事.
+
+
+      鼠标事件就是由鼠标相关操作触发,发生在对应元素上面的事.
+  </pre>
+  <div class="present" style="float:left;width:48%">
+    <div>onclick 鼠标单击触发</div>
+    <div>ondbclick 鼠标双击触发</div>
+    <div>onmousedown 鼠标任何键按下触发</div>
+    <div>onmouseup 鼠标任何键松开触发</div>
+    <div>onmouseover 鼠标移进触发</div>
+    <div>onmousemove 鼠标移动触发</div>
+    <div>onmouseout 鼠标移出触发</div>
+  </div>
+  <div class="present" style="float:left;margin-left:4%;width:48%">
+    <div style="background-color:green" onclick="cl(this)">添加方法:onclick = '函数名'</div>
+    <div style="background-color:yellow" ondblclick="dbcl(this)">添加方法:ondbclick = '函数名' </div>
+    <div style="background-color:skyblue" onmousedown="mouseD(this)">添加方法:onmousedown = '函数名' </div>
+    <div style="background-color:pink" onmouseup ="mouseU(this)">添加方法:onmouseup = '函数名' </div>
+    <div style="background-color:red" onmouseover ="mouseO(this)">添加方法:onmouseover = '函数名' </div>
+    <div style="background-color:orange" onmousemove ="mouseM(this)">添加方法:onmousemove = '函数名' </div>
+    <div style="background-color:white" onmouseout ="mouseOut(this)">添加方法:onmouseout = '函数名' </div>
+  </div>
+  <div style="font-size:30px;width:100%;text-align:center;">flex布局讲解</div>
+  <pre style="font-size:25px;">Flex 布局(弹性布局)处理的问题:一条线
+      flex 是一个线性布局,使用方法 display:flex/display:inline-flex
+        注意:子元素的float、clear和vertical-align属性将失效。
+
+      flex中有两根轴:一根是主轴(默认方向为横向,从左到右)(main-axis)
+                    一根是交叉轴(默认方向是纵向)(cross-axis)
+
+      虽然有两根轴,但是交叉轴只是表示flex中每个item的纵向对齐方式
+
+      对于flex容器有以下五个属性:
+  </pre>
+  <ul class="flex">
+    <li>flex-direction</li>
+    <li>flex-wrap</li>
+    <li>flex-flow</li>
+    <li>justify-content</li>
+    <li>align-items</li>
+    <li>align-content</li>
+  </ul>
+  <pre style="font-size:25px;">
+    flex-direction:设置主轴的方向,有以下四个值:
+        row: 默认情况,横向,从左往右
+        row-reverse: 横向,从右往左
+        column:纵向,从上往下
+        column-reverse:纵向,从下往上
+
+    flex-wrap:规定如果一行装不下所有项目的时候怎么处理,有以下三个值:
+        nowrap:默认情况,不换行()会造成挤压)
+        wrap:正常换行
+        wrap-reverse:逆向换行,第一行在最下面
+
+    flex-flow:上面两个属性的简写,格式为 flex-flow: flex-direction||flex-wrap
+
+    justify-content:定义项目在主轴上的对齐方式,有以下五个值:
+        flex-start:默认,主轴起始方向对齐
+        flex-end:主轴结束方向对齐
+        center:居中对齐
+        space-between:两端对齐,项目间的间距相等和容器边框没有间距,间距自适应
+        space-around:不知如何命名的对齐,项目之间的间距相等,但是项目之间的间隔比容
+                     器边框和项目的间隔大一倍
+
+    align-items:定义项目在交叉轴上的对齐方式,有以下五个值:
+        strech:默认值,如果项目的高度没有设置或者设置为auto,就会变成拉伸对齐
+        flex-start:对齐交叉轴的起点
+        flex-end:对齐交叉轴的终点
+        center:居中对齐
+        baseline:项目第一行的文字的基线对齐
+
+    align-content:定义项目在有多根主轴的时候的对齐方式(有换行时),有以下六个值:
+        strech:默认值,如果项目的高度没有设置或者设置为auto,就会变成拉伸对齐
+        flex-start:对齐交叉轴的起点
+        flex-end:对齐交叉轴的终点
+        center:居中对齐
+        space-between:与交叉轴两端对齐，每个主轴之间的间隔平均分布
+        space-around:每根主轴两侧的间隔都相等,但是主轴之间的间隔比主轴与边框的间隔大一倍。
+  </pre>
+  <pre style="font-size:25px;font-weight:bold">
+    项目上可以设置的属性:
+  </pre>
+  <ul class="flex">
+      <li>order</li>
+      <li>flex-grow</li>
+      <li>flex-shrink</li>
+      <li>flex-basis</li>
+      <li>flex</li>
+      <li>align-self</li>
+  </ul>
+  <pre style="font-size:25px;">
+      order:定义项目在主轴上的排列顺序(可以打乱写的时候创建的顺序),可以设置一个数值,
+            数值越小表示越靠前,默认为0,如果有两个项目数值相等,则按声明顺序排列
+
+      flex-grow:定义如果容器还有剩余空间怎么进行放大,可以设置一个数值,数值越大表示
+                放大的级别越大(也就是说如果一个项目该值为2,一个项目该值为1,则声明
+                为2的要比声明为1的多,如果所有项目都是相同的且不为0,则等分剩余空间)
+                ,默认为0
+
+      flex-shrink:定义如果容器空间不足怎么进行缩小,可以设置一个数值,同上,数值越小
+                  缩小级别越小,如果为0则不缩小,默认值为1
+
+      flex-basis:定义了在分配多余空间之前，项目占据的主轴空间.浏览器根据这个属性，
+                 计算主轴是否有多余空间.默认值为auto,接受的值为一个长度,如:300px.
+
+      flex:上面三个属性的简写,默认值为 0(flex-grow) 1(flex-shrink) auto(flex-basis)
+
+      align-self:定义该项目在交叉轴上采用"特殊"的对齐方式,可能不同于其他的项目,默认值
+                 为auto,即继承容器的align-items的值,其余可用的值和值所对应的意思及规
+                 则和align-items完全相同
+  </pre>
+</body>
+<script type="text/javascript">
+  function cl(){
+    if(arguments[0].style.backgroundColor != 'white')
+      arguments[0].style.backgroundColor = 'white';
+    else
+      arguments[0].style.backgroundColor = 'green';
+
+  }
+  function dbcl(){
+    if(arguments[0].style.backgroundColor != 'white')
+      arguments[0].style.backgroundColor = 'white';
+    else
+      arguments[0].style.backgroundColor = 'yellow';
+
+  }
+  function mouseD(){
+    if(arguments[0].style.backgroundColor != 'white')
+      arguments[0].style.backgroundColor = 'white';
+    else
+      arguments[0].style.backgroundColor = 'skyblue';
+
+  }
+  function mouseU(){
+    if(arguments[0].style.backgroundColor != 'white')
+      arguments[0].style.backgroundColor = 'white';
+    else
+      arguments[0].style.backgroundColor = 'pink';
+
+  }
+  function mouseO(){
+    if(arguments[0].style.backgroundColor != 'white')
+      arguments[0].style.backgroundColor = 'white';
+    else
+      arguments[0].style.backgroundColor = 'red';
+
+  }
+  function mouseM(){
+    if(arguments[0].style.backgroundColor != 'white')
+      arguments[0].style.backgroundColor = 'white';
+    else
+      arguments[0].style.backgroundColor = 'orange';
+
+  }
+  function mouseOut(){
+    if(arguments[0].style.backgroundColor != 'blue')
+      arguments[0].style.backgroundColor = 'blue';
+    else
+      arguments[0].style.backgroundColor = 'white';
+
+  }
+</script>
+</html>
